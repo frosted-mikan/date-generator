@@ -24,6 +24,13 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
         integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
         crossorigin="anonymous"></script>
+
+    <!-- Import Data -->
+    <script type="text/javascript" src='date_ideas.js'></script>
+
+    <!-- Import Script JS -->
+    <script defer src='script.js'></script>
+
 </head>
 
 <body>
@@ -72,33 +79,33 @@
             <div id="home-search">
                 <img class="logo" src="datesite_icon_nobkgrd.png">
                 <div id="priceFilter" class="btn-group dropright">
-                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+                    <button id="priceInputValue" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                         price
                     </button>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">free</a>
-                        <a class="dropdown-item" href="#">$</a>
-                        <a class="dropdown-item" href="#">$$$</a>
+                        <a class="dropdown-item price" href="#">free</a>
+                        <a class="dropdown-item price" href="#">$</a>
+                        <a class="dropdown-item price" href="#">$$$</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">any</a>
+                        <a class="dropdown-item price" href="#">any</a>
                     </div>
                 </div>
                 <div id="weatherFilter" class="btn-group dropright">
-                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+                    <button id="seasonInputValue" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                         season
                     </button>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">summer</a>
-                        <a class="dropdown-item" href="#">fall</a>
-                        <a class="dropdown-item" href="#">winter</a>
-                        <a class="dropdown-item" href="#">spring</a>
+                        <a class="dropdown-item season" href="#">summer</a>
+                        <a class="dropdown-item season" href="#">fall</a>
+                        <a class="dropdown-item season" href="#">winter</a>
+                        <a class="dropdown-item season" href="#">spring</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">any</a>
+                        <a class="dropdown-item season" href="#">any</a>
                     </div>
                 </div>
-                <button class="btn btn-secondary genButton">
+                <button id="findButton" class="btn btn-secondary genButton">
                     find
                     <svg id="findHeart" xmlns="http://www.w3.org/2000/svg" width="17px" height="17px" fill="currentColor"
                         class="bi bi-heart-fill" viewBox="0 0 16 16">
@@ -129,25 +136,7 @@
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("#sidebar").mCustomScrollbar({
-                theme: "minimal"
-            });
-
-            $('#dismiss, .overlay').on('click', function () {
-                $('#sidebar').removeClass('active');
-                $('.overlay').removeClass('active');
-            });
-
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').addClass('active');
-                $('.overlay').addClass('active');
-                $('.collapse.in').toggleClass('in');
-                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-            });
-        });
-    </script>
+    
 </body>
 
 </html>
