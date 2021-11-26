@@ -1,3 +1,5 @@
+let generatedDates = [];
+
 $(document).ready(function () {
     //sidebar animations
     $("#sidebar").mCustomScrollbar({
@@ -47,11 +49,18 @@ $(document).ready(function () {
         console.log(season); 
         console.log(data[0]["Season"]);
         console.log((data[0]["Season"].toLowerCase()).includes(season));
-        filteredResults = data.filter((dateDict)=>{
+        generatedDates = data.filter((dateDict)=>{
             let seasonCheck =(dateDict["Season"].toLowerCase()).includes(season);
             let priceCheck = (dateDict["Price"]) === (price);
             return seasonCheck && priceCheck;
         });
-        console.log("filtered: ", filteredResults);
+        console.log("filtered before: ", generatedDates);
+
+        // Set dates in sessionStorage
+        sessionStorage.setItem('dates', JSON.stringify(generatedDates));
+
+        // Go to swipe page
+        window.location.href='swipe.html';
     });
 });
+

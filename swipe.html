@@ -14,7 +14,50 @@
 
     <body>
         <div class="container">
+        
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <svg id="dismiss" class="btn" xmlns="http://www.w3.org/2000/svg" width="70" height="70"
+                fill="#0B032E" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                <svg aria-hidden="true" x="8%" height="83%" width="83%" focusable="false" data-prefix="fas" data-icon="times"
+                    class="svg-inline--fa fa-times fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 352 512">
+                    <path fill="#74546A"
+                        d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z">
+                    </path>
+                </svg>
+            </svg>
+
+            <div class="sidebar-header">
+                <h3>Home</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li><a href="index.html">home</a></li>
+                <li><a href="#">liked dates</a></li>
+                <li><a href="#">add a date</a></li>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
         <div class="row outerRow">
+            <div class="side">
+            <svg id="sidebarCollapse" class="btn" xmlns="http://www.w3.org/2000/svg" width="70" height="70"
+                fill="#F67E7D" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                <svg aria-hidden="true" x="17%" y="10%" height="65%" width="65%" focusable="false" data-prefix="fas"
+                    data-icon="bars" class="svg-inline--fa fa-bars fa-w-14" role="img"
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path fill="#0B032E"
+                        d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z">
+                    </path>
+                </svg>
+            </svg>
+            </div>
+
             <div class="col-sm-3" id="buttonContain">
                 <div class="rounded-circle" id="reject" onclick="swipeDate(false)">
                     <button type="button" class="btn-close rejectBtn" aria-label="Close"></button>
@@ -83,6 +126,16 @@
         </div>
         </div>
     </body>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+
+    <!-- jQuery Custom Scroller CDN -->
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
 
     <script src="swipe_script.js"></script>
 </html>

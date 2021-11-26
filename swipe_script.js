@@ -1,41 +1,68 @@
 // SCRIPT FOR SWIPE.HTML PAGE
+$(document).ready(function () {
+    //sidebar animations
+    $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+    });
 
-// Take dates from generatedDates[] and display
-//      display additional info in "i" button popup
+    $('#dismiss, .overlay').on('click', function () {
+        $('#sidebar').removeClass('active');
+        $('.overlay').removeClass('active');
+    });
 
+    $('#sidebarCollapse').on('click', function () {
+        $('#sidebar').addClass('active');
+        $('.overlay').addClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+    });
+});
 
+let generatedDates = JSON.parse(sessionStorage.getItem('dates'));
+console.log("dates: ", generatedDates);
 
 // Mock generatedDates[] array 
-let generatedDates = [
-    {
-        "id": 0,
-        "name": "Picnic in the Arb",
-        "about": "This is a fun date idea! You should definitely go here.",
-        "indoor": true,
-        "address": "530 S 4th Ave",
-        "season": "spring, summer",
-        "price": 0,
-        "images": [
-            "demoimg.jpg",
-            "demoimg2.jpg",
-            "demoimg3.jpg"
-        ]
-    },
-    {
-        "id": 1,
-        "name": "Watch a Movie",
-        "about": "This is also a fun date! You should go here instead.",
-        "indoor": true,
-        "address": "338 E Jefferson St",
-        "season": "any",
-        "price": 1,
-        "images": [
-            "demoimg.jpg",
-            "demoimg2.jpg",
-            "demoimg3.jpg"
-        ]
-    }
-];
+// let generatedDates = [
+//     {
+//         "id": 0,
+//         "name": "Picnic in the Arb",
+//         "about": "This is a fun date idea! You should definitely go here.",
+//         "indoor": true,
+//         "address": "530 S 4th Ave",
+//         "season": "spring, summer",
+//         "price": 0,
+//         "images": [
+//             "demoimg.jpg",
+//             "demoimg2.jpg",
+//             "demoimg3.jpg"
+//         ]
+//     },
+//     {
+//         "id": 1,
+//         "name": "Watch a Movie",
+//         "about": "This is also a fun date! You should go here instead.",
+//         "indoor": true,
+//         "address": "338 E Jefferson St",
+//         "season": "any",
+//         "price": 1,
+//         "images": [
+//             "demoimg.jpg",
+//             "demoimg2.jpg",
+//             "demoimg3.jpg"
+//         ]
+//     }
+// ];
+
+// What the actual data in date_ideas.js looks like
+// {
+//     "Name": "Walk in the Arb",
+//     "About": "As for more relaxed things to do in Ann Arbor for couples, nothing can beat Nichols Arboretum. These grounds are very secluded and quiet – just the thing for couples that want to enjoy each other and not the crowds of strangers. The scenery changes all the time: new plans, new flowers and trees. You will love this setting and maybe it will become your usual place.",
+//     "Picture Links": "https://upload.wikimedia.org/wikipedia/commons/e/e3/NicholsArb.JPG",
+//     "Address": "899 Nichols Dr, Ann Arbor, MI 48109",
+//     "Price": 0,
+//     "Season": "Summer, Spring, Fall",
+//     "Inside": false
+// }
 
 // More Info popup
 let modal = document.getElementById("myModal");
@@ -74,17 +101,18 @@ let modalLoc = document.getElementById("modalLoc");
 let modalPrice = document.getElementById("modalPrice");
 
 // First card (on page load)
-img.src = generatedDates[0]["images"][0];
-dateName.innerHTML = generatedDates[0]["name"];
-price.innerHTML = "price: " + translatePrice(generatedDates[0]["price"]);
-loc.innerHTML = "location: " + generatedDates[0]["address"];
+// img.src = generatedDates[0]["images"][0]; // there is only 1 image
+img.src = generatedDates[0]["Picture Links"];
+dateName.innerHTML = generatedDates[0]["Name"];
+price.innerHTML = "price: " + translatePrice(generatedDates[0]["Price"]);
+loc.innerHTML = "location: " + generatedDates[0]["Address"];
 
 // First popup 
-modalName.innerHTML = generatedDates[0]["name"];
-about.innerHTML = generatedDates[0]["about"];
-season.innerHTML = "<b>season: </b>" + generatedDates[0]["season"];
-modalLoc.innerHTML = "<b>location: </b>" + translateLoc(generatedDates[0]["indoor"]);
-modalPrice.innerHTML = "<b>price: </b>" + translatePrice(generatedDates[0]["price"]);
+modalName.innerHTML = generatedDates[0]["Name"];
+about.innerHTML = generatedDates[0]["About"];
+season.innerHTML = "<b>season: </b>" + generatedDates[0]["Season"];
+modalLoc.innerHTML = "<b>location: </b>" + translateLoc(generatedDates[0]["Inside"]);
+modalPrice.innerHTML = "<b>price: </b>" + translatePrice(generatedDates[0]["Price"]);
 
 
 // Choose reject or heart a date
@@ -114,20 +142,22 @@ function swipeDate(heart){
     }
 
     // Update date card
-    img.src = generatedDates[index]["images"][0];
-    dateName.innerHTML = generatedDates[index]["name"];
-    price.innerHTML = "price: " + translatePrice(generatedDates[index]["price"]);
-    loc.innerHTML = "location: " + generatedDates[index]["address"];
+    // img.src = generatedDates[index]["images"][0]; // there is only 1 image
+    img.src = generatedDates[index]["Picture Links"];
+    dateName.innerHTML = generatedDates[index]["Name"];
+    price.innerHTML = "price: " + translatePrice(generatedDates[index]["Price"]);
+    loc.innerHTML = "location: " + generatedDates[index]["Address"];
 
     // Update popup
-    modalName.innerHTML = generatedDates[index]["name"];
-    about.innerHTML = generatedDates[index]["about"];
-    season.innerHTML = "<b>season: </b>" + generatedDates[index]["season"];
-    modalLoc.innerHTML = "<b>location: </b>" + translateLoc(generatedDates[index]["indoor"]);
-    modalPrice.innerHTML = "<b>price: </b>" + translatePrice(generatedDates[index]["price"]);
+    modalName.innerHTML = generatedDates[index]["Name"];
+    about.innerHTML = generatedDates[index]["About"];
+    season.innerHTML = "<b>season: </b>" + generatedDates[index]["Season"];
+    modalLoc.innerHTML = "<b>location: </b>" + translateLoc(generatedDates[index]["Inside"]);
+    modalPrice.innerHTML = "<b>price: </b>" + translatePrice(generatedDates[index]["Price"]);
 }
 
 // Slideshow through images
+// Currently, date_ideas.js only has one picture for each date, so there's no need to slideshow
 function scrollImages(direction){
     // Get array of images
     let dateImgs = generatedDates[index]["images"];
