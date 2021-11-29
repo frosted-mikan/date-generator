@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-US">
+   <head>
+     <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Date Generator</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="liked_style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+              <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+              <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+      <!-- Favicon -->
+      <link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon">
+
+      <!-- Import Data -->
+      <script type="text/javascript" src='date_ideas.js'></script>
+    </head>
+
+    <body>
+        <div class="container" id ="app">
+          <!-- Sidebar  -->
+        <nav id="sidebar">
+            <svg id="dismiss" class="btn" xmlns="http://www.w3.org/2000/svg" width="70" height="70"
+                fill="#0B032E" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+                <svg aria-hidden="true" x="8%" height="83%" width="83%" focusable="false" data-prefix="fas" data-icon="times"
+                    class="svg-inline--fa fa-times fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 352 512">
+                    <path fill="#74546A"
+                        d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z">
+                    </path>
+                </svg>
+            </svg>
+
+            <div class="sidebar-header">
+                <h3>Home</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active"><a href="#">home</a></li>
+                <li><a href="#">liked dates</a></li>
+                <li><a href="#">add a date</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Page  -->
+        <div class="row vh-100" id="mainLiked">
+          <div class="col-md-0">
+          </div>
+          <div class="col-md-12" id="likedColumn">
+            <div id="header">
+                LIKED DATES
+            </div>
+            <!-- Date List  -->
+            <div v-for="(date, index) in likedDates" :key="date.ID" >
+            <div class="row dateContainer" :id="'date' + date.ID" >
+              <div class="col-md-2" id="dateImageDiv">
+                <img v-bind:src="date.PictureLinks" id="dateImage">
+              </div>
+              <div class="col-md-9" id="dateText" @click="displayInfo(index)">
+                {{date.Name}}
+              </div>
+              <div class="col-md-1" id="dateDeleteDiv">
+                <button type="button" class="btn btn-primary btn-circle" id="dateDelete" @click="deleteDate(index)">X</button>
+              </div>
+            </div>
+
+          </div>
+          </div>
+          <div class="col-md-0">
+          </div>
+        </div>
+
+        <!-- Modal Info  -->
+        <div id="myInfo" class="modal" v-bind:style="{ display: computedInfo }">
+            <div class="modal-content">
+                <div class="topbar row">
+                    <div class="col-sm-10">
+                        <h1 id="infoName">{{likedDates[infoIndex].Name}}</h1>
+                    </div>
+                    <div class="col-sm-2">
+                        <span class="close" @click="displayInfo(0)">&times;</span>
+                    </div>
+                </div>
+                <div class="row infoBox">
+                    <div class="col-sm-5 infoRight">
+                      <img v-bind:src="likedDates[infoIndex].PictureLinks" id="infoImage">
+                        <div class=userRatings>
+                          <p><h2>User Ratings: </h2></p>
+                          <p> <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star unchecked"></span>
+                          <span class="fa fa-star unchecked"></span> </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-7 infoLeft">
+                      <p><h2>about: </h2><span><h5 id="infoAbout">{{likedDates[infoIndex].About}}</h5></span></p>
+                      <p><h2>address: </h2><span><h5 id="infoAddress">{{likedDates[infoIndex].Address}}</h5></span></p>
+                      <div class="infoPart">
+                      <p><h2>loaction: </h2><span><h5 id="infoLocation">{{computedInside}}</h5></span></p>
+                      <p><h2>price: </h2><span><h5 id="infoPrice">{{computedPrice}}</h5></span></p>
+                      <p><h2>date: </h2><span><h5 id="infoDate">{{likedDates[infoIndex].Season}}</h5></span></p>
+                      </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </body>
+
+    <script src="liked_script.js"></script>
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+       crossorigin="anonymous"></script>
+   <!-- Popper.JS -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+       integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+       crossorigin="anonymous"></script>
+   <!-- Bootstrap JS -->
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+       integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+       crossorigin="anonymous"></script>
+       <!-- jQuery Custom Scroller CDN -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+</html>
