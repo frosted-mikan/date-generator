@@ -57,7 +57,7 @@ console.log("dates: ", generatedDates);
 // {
 //     "Name": "Walk in the Arb",
 //     "About": "As for more relaxed things to do in Ann Arbor for couples, nothing can beat Nichols Arboretum. These grounds are very secluded and quiet – just the thing for couples that want to enjoy each other and not the crowds of strangers. The scenery changes all the time: new plans, new flowers and trees. You will love this setting and maybe it will become your usual place.",
-//     "Picture Links": "https://upload.wikimedia.org/wikipedia/commons/e/e3/NicholsArb.JPG",
+//     "PictureLinks": "https://upload.wikimedia.org/wikipedia/commons/e/e3/NicholsArb.JPG",
 //     "Address": "899 Nichols Dr, Ann Arbor, MI 48109",
 //     "Price": 0,
 //     "Season": "Summer, Spring, Fall",
@@ -102,7 +102,7 @@ let modalPrice = document.getElementById("modalPrice");
 
 // First card (on page load)
 // img.src = generatedDates[0]["images"][0]; // there is only 1 image
-img.src = generatedDates[0]["Picture Links"];
+img.src = generatedDates[0]["PictureLinks"];
 dateName.innerHTML = generatedDates[0]["Name"];
 price.innerHTML = "price: " + translatePrice(generatedDates[0]["Price"]);
 loc.innerHTML = "location: " + generatedDates[0]["Address"];
@@ -143,7 +143,7 @@ function swipeDate(heart){
 
     // Update date card
     // img.src = generatedDates[index]["images"][0]; // there is only 1 image
-    img.src = generatedDates[index]["Picture Links"];
+    img.src = generatedDates[index]["PictureLinks"];
     dateName.innerHTML = generatedDates[index]["Name"];
     price.innerHTML = "price: " + translatePrice(generatedDates[index]["Price"]);
     loc.innerHTML = "location: " + generatedDates[index]["Address"];

@@ -10,24 +10,31 @@ var app = new Vue({
 	},
 	methods: {
 		validActivity(activity) {
-			if (activity.image_url.length === 0) return false;
-			if (activity.event_title.toLowerCase().includes("cancelled")) return false;
+			if (activity.PictureLinks.length === 0) return false;
+			if (activity.Name.toLowerCase().includes("cancelled")) return false;
+			let repeat = 0;
+			for (let i = 0; i < this.displayedEvents.length; ++i) {
+				if (activity.Name.toLowerCase() === this.displayedEvents[i].Name.toLowerCase()) {
+					if (repeat === 1) return false;
+					else repeat += 1;
+				}
+			}
 			return true;
 		},
 		handleApiCall(response) {
 			console.log("api call response:", response.data)
 			// this.genres = [...new Set(this.originalSongs.map((song) => song["primaryGenreName"]))]
-			this.displayedEvents = response.data.filter(this.validActivity).map((activity) => {
+			this.displayedEvents = response.data.map((activity) => {
 				return {
 					"Name": activity.event_title,
 					"About": activity.description.split("\r")[0],
-					"Picture Links": activity.image_url,
+					"PictureLinks": activity.image_url,
 					"Address": activity.location_name,
 					"Price": this.getPrice(activity.cost),
 					"Season": "Any",
 					"Inside": false
 				}
-			})
+			}).filter(this.validActivity)
 		},
 		getPrice(cost) {
 			if (cost.toLowerCase().includes("free") || cost === "" || typeof cost == 'undefined') {
