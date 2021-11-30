@@ -119,6 +119,7 @@ ul ul a {
   height: 100%;
   width: 100%;
   overflow: auto;
+  text-align: center;
 }
 
 #header {
@@ -130,6 +131,15 @@ ul ul a {
 }
 
 /* Date List */
+#emptyText h2 {
+  text-align: center;
+  color: #0b032e;
+  margin-top: 20px;
+}
+#emptyText {
+  padding-top: 20px;
+}
+
 .dateContainer {
   background-color: #FFD5C0;
   height: auto;

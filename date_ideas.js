@@ -10,7 +10,7 @@ data = [
  },
  {
    "Name": "Basketball at the CCRB",
-   "About": "",
+   "About": "Have a blast at the basketball courts of the Cenral Campus Recreation Building!  As slam dunk of a date.",
    "PictureLinks": "https://recsports.umich.edu/wp-content/uploads/CCRB_Gym-Courts-2.jpg",
    "Address": "401 Washtenaw Ave, Ann Arbor, MI 48109",
    "Price": 0,
@@ -19,7 +19,7 @@ data = [
  },
  {
    "Name": "Pick apples or run the corn maze at Dexter's Cider Mill",
-   "About": "",
+   "About": "Have a festive fall ",
    "PictureLinks": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dextercidermill.com%2F&psig=AOvVaw0KYhOF17IpmHvonmoXBSNf&ust=1637181629416000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCJiq_ILfnfQCFQAAAAAdAAAAABAD",
    "Address": "3685 Central St, Dexter, MI 48130",
    "Price": 1,
