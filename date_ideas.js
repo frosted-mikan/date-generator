@@ -19,7 +19,7 @@ data = [
  },
  {
    "Name": "Pick apples or run the corn maze at Dexter's Cider Mill",
-   "About": "",
+   "About": "Family owned and operated since 1886, The Dexter Cider Mill has been serving Dexter, the greater Ann Arbor area and our visitors for 132 years.",
    "PictureLinks": "https://www.dextercidermill.com/uploads/1/2/0/2/120249207/editor/dexter-cider-mill.jpg?1536068739",
    "Address": "3685 Central St, Dexter, MI 48130",
    "Price": 1,
@@ -28,7 +28,7 @@ data = [
  },
  {
    "Name": "Star gazing",
-   "About": "",
+   "About": "Stargazing is a wonderful first date, but it takes some planning and good timing. You’ll need to choose a comfortable spot, wait for clear skies, and most likely bring some food and blankets. ",
    "PictureLinks": "https://www.sunset.com/wp-content/uploads/dark-sky-party-getty-0918.jpg",
    "Address": "Preferably outside the city on a clear night",
    "Price": 0,
@@ -37,7 +37,7 @@ data = [
  },
  {
    "Name": "Color-themed picnic",
-   "About": "",
+   "About": "Having a picnic is a great way to spend time outside with your significant other and enjoy a special meal together. Put a spin on the food planning by choosing a color and bringing all your favorite foods of that color!",
    "PictureLinks": "https://www.jasminealley.com/wp-content/uploads/2018/01/instagram-picnic-set-up-1440x1800.jpg",
    "Address": "Anywhere!",
    "Price": 1,
@@ -55,7 +55,7 @@ data = [
  },
  {
    "Name": "Kayaking or tubing down the Huron River",
-   "About": "",
+   "About": "Kick back and relax while floating down Argo Cascades or Huron River!",
    "PictureLinks": "https://www.a2gov.org/departments/Parks-Recreation/parks-places/argo/Galleries/Home/072015cascades-24.jpg?RenditionId=12",
    "Address": "899 Nichols Dr, Ann Arbor, MI 48109",
    "Price": 1,
@@ -64,7 +64,7 @@ data = [
  },
  {
    "Name": "Sledding in the Arb",
-   "About": "",
+   "About": "Sledding is a fun date idea for anyone who likes spending time in the wintery weather! Just make sure to bundle up and maybe bring a thermos of hot cocoa!",
    "PictureLinks": "https://i2.wp.com/www.devilslakewisconsin.com/wp-content/uploads/2019/02/sledding.jpg?fit=1500%2C618&ssl=1",
    "Address": "899 Nichols Dr, Ann Arbor, MI 48109",
    "Price": 0,
@@ -73,7 +73,7 @@ data = [
  },
  {
    "Name": "Make snowmen of the other person",
-   "About": "",
+   "About": "Everyone loves building a snowman..!  Put a fun twist on it by dressing your snowman as your loved one ❤️",
    "PictureLinks": "https://i.pinimg.com/originals/21/5b/80/215b8037fd7e3ab3a4ce8ed8112bbcf3.jpg",
    "Address": "Anywhere!",
    "Price": 0,
@@ -82,7 +82,7 @@ data = [
  },
  {
    "Name": "Rock climbing date at Planet Rock",
-   "About": "",
+   "About": "On a cold or rainy Ann Arbor Day, few active pursuits are better than some climbing at Planet Rock.",
    "PictureLinks": "https://planet-rock.com/wp-content/uploads/2019/07/Locations_MH2new.jpg",
    "Address": "82 Aprill Dr C, Ann Arbor, MI 48103",
    "Price": 2,
@@ -163,7 +163,7 @@ data = [
  },
  {
    "Name": "Jump roping",
-   "About": "",
+   "About": "The basic jump, criss-cross, alternating feet jumps... Jump roping is a great outdoor activity to do with a friend or partner!",
    "PictureLinks": "https://www.mensjournal.com/wp-content/uploads/2016/10/JumpRope.jpg?quality=86&strip=all",
    "Address": "",
    "Price": 1,
