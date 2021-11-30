@@ -115,34 +115,44 @@ $(document).ready(function () {
 		console.log(data);
 		let price = $('#priceInputValue').html();
 		let season = $('#seasonInputValue').html();
+		if(season === "season"){
+			season = "any";
+		}
 		switch (price) {
+			case "price":
+				price = "any"
+				break;
 			case "free":
+				console.log("0")
 				price = 0;
 				break;
 			case "$":
+				console.log("1")
 				price = 1;
 				break;
 			case "$$$":
+				console.log("2")
 				price = 2;
 				break;
 			default:
 				break;
 		}
-		console.log(price);
-		console.log(season);
-		console.log(data[0]["Season"]);
-		console.log((data[0]["Season"].toLowerCase()).includes(season));
-		console.log("GENERATED DATES", generatedDates)
-		generatedDates.push.apply(generatedDates, data.filter((dateDict) => {
+		// console.log(price);
+		// console.log(season);
+		// console.log(data[0]["Season"]);
+		// console.log((data[0]["Season"].toLowerCase()).includes(season));
+		generatedDates = generatedDates.concat(data)
+		console.log("BEFORE FILTER", generatedDates)
+		let filteredDates = generatedDates.filter((dateDict) => {
 			let seasonCheck = ((dateDict["Season"].toLowerCase()).includes(season) || season === "any");
 			let priceCheck = ((dateDict["Price"]) === (price) || price == "any");
+			console.log("	dateDict[Price]: ",dateDict["Price"], " price : ", price, " ", (dateDict["Price"]) === (price)  )
 			return seasonCheck && priceCheck;
-		}));
-		console.log("GENERATED DATES", generatedDates)
-		console.log("filtered before: ", generatedDates);
+		});
+		console.log("GENERATED DATES", filteredDates)
 
 		// Set dates in sessionStorage
-		sessionStorage.setItem('dates', JSON.stringify(generatedDates));
+		sessionStorage.setItem('dates', JSON.stringify(filteredDates));
 
 		// Go to swipe page
 		window.location.href = 'swipe.html';
