@@ -271,6 +271,7 @@ text-align: center;
   background-image: url("stamp.png");
   background-repeat:no-repeat;
   background-position: right -20% bottom -40%;
+  overflow: auto;
 }
 
 .infoRight {
