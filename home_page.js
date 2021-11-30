@@ -115,13 +115,13 @@ $(document).ready(function () {
 		console.log(data);
 		let price = $('#priceInputValue').html();
 		let season = $('#seasonInputValue').html();
-		if(season === "season"){
+		if(season.includes("season")){
 			season = "any";
+		}		
+		if(price.includes("price")){
+			price = "any";
 		}
 		switch (price) {
-			case "price":
-				price = "any"
-				break;
 			case "free":
 				console.log("0")
 				price = 0;
@@ -142,6 +142,7 @@ $(document).ready(function () {
 		// console.log(data[0]["Season"]);
 		// console.log((data[0]["Season"].toLowerCase()).includes(season));
 		generatedDates = generatedDates.concat(data)
+		console.log("season is : ",season)
 		console.log("BEFORE FILTER", generatedDates)
 		let filteredDates = generatedDates.filter((dateDict) => {
 			let seasonCheck = ((dateDict["Season"].toLowerCase()).includes(season) || season === "any");
