@@ -71,11 +71,11 @@ var app = new Vue({
 				generatedDates.push.apply(generatedDates, this.displayedEvents);
 			})
 		}
-	},
-	created: function () {
-		this.search();
 	}
 })
+
+generatedDates = data;
+app.search();
 
 $(document).ready(function () {
 	console.log("GENERATED DATES UPDATED", generatedDates);
@@ -105,9 +105,6 @@ $(document).ready(function () {
 		$('#seasonInputValue').html($(this).html());
 	});
 
-	//pull happening data
-
-
 	//find button
 	$('#findButton').on('click', function () {
 		console.log(data);
@@ -126,18 +123,11 @@ $(document).ready(function () {
 			default:
 				break;
 		}
-		console.log(price);
-		console.log(season);
-		console.log(data[0]["Season"]);
-		console.log((data[0]["Season"].toLowerCase()).includes(season));
-		console.log("GENERATED DATES", generatedDates)
-		generatedDates.push.apply(generatedDates, data.filter((dateDict) => {
+		generatedDates = generatedDates.filter((dateDict) => {
 			let seasonCheck = ((dateDict["Season"].toLowerCase()).includes(season) || season === "any");
 			let priceCheck = ((dateDict["Price"]) === (price) || price == "any");
 			return seasonCheck && priceCheck;
-		}));
-		console.log("GENERATED DATES", generatedDates)
-		console.log("filtered before: ", generatedDates);
+		});
 
 		// Set dates in sessionStorage
 		sessionStorage.setItem('dates', JSON.stringify(generatedDates));
