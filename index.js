@@ -13,7 +13,7 @@ var app = new Vue({
 			if (activity.PictureLinks.length === 0) return false;
 			if (activity.Name.toLowerCase().includes("cancelled")) return false;
 			let repeat = 0;
-			for (let i = 0; i < array.length; ++i) {
+			for (let i = 0; i < index; ++i) {
 				if (activity.Name.toLowerCase() === array[i].Name.toLowerCase()) {
 					if (repeat === 1) return false;
 					else repeat += 1;
