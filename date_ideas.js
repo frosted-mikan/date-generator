@@ -10,7 +10,7 @@ data = [
  },
  {
    "Name": "Basketball at the CCRB",
-   "About": "",
+   "About": "Have a blast at the basketball courts of the Cenral Campus Recreation Building!  As slam dunk of a date.",
    "PictureLinks": "https://recsports.umich.edu/wp-content/uploads/CCRB_Gym-Courts-2.jpg",
    "Address": "401 Washtenaw Ave, Ann Arbor, MI 48109",
    "Price": 0,
