@@ -16,17 +16,31 @@
         <!-- Scrollbar Custom CSS -->
         <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
-              <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-              <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+      
+      <!---->
+      <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
       <!-- Favicon -->
-      <link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon">
+      <link rel="shortcut icon" href="./favicon.ico?v=2" type="image/x-icon">
 
       <!-- Import Data -->
       <script type="text/javascript" src='date_ideas.js'></script>
     </head>
 
     <body>
+      <svg id="sidebarCollapse" class="btn" xmlns="http://www.w3.org/2000/svg" width="70" height="70"
+          fill="#F67E7D" class="bi bi-heart-fill" viewBox="0 0 16 16">
+          <path fill-rule="evenodd"
+              d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
+          <svg aria-hidden="true" x="17%" y="10%" height="65%" width="65%" focusable="false" data-prefix="fas"
+              data-icon="bars" class="svg-inline--fa fa-bars fa-w-14" role="img"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <path fill="#0B032E"
+                  d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z">
+              </path>
+          </svg>
+      </svg>
         <div class="container" id ="app">
           <!-- Sidebar  -->
         <nav id="sidebar">
@@ -48,13 +62,15 @@
             </div>
 
             <ul class="list-unstyled components">
-                <li class="active"><a href="#">home</a></li>
-                <li><a href="#">liked dates</a></li>
+                <li><a href="./index.html">home</a></li>
+                <li class="active"><a href="#">liked dates</a></li>
                 <li><a href="#">add a date</a></li>
             </ul>
         </nav>
 
         <!-- Main Page  -->
+
+      </svg>
         <div class="row vh-100" id="mainLiked">
           <div class="col-md-0">
           </div>
@@ -119,7 +135,6 @@
             </div>
         </div>
         </div>
-    </body>
 
     <script src="liked_script.js"></script>
     <!-- jQuery CDN - Slim version (=without AJAX) -->
@@ -137,4 +152,6 @@
        <!-- jQuery Custom Scroller CDN -->
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+  </body>
 </html>
