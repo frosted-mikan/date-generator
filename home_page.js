@@ -3,7 +3,7 @@ let generatedDates = [];
 var app = new Vue({
 	el: '#app',
 	data: {
-		displayedEvents: [],
+		pulledEvents: [],
 		startDate: new Date(),
 		endDate: new Date(),
 		types: [7, 15, 11, 6, 10]
@@ -12,18 +12,16 @@ var app = new Vue({
 		validActivity(activity, index, array) {
 			if (activity.PictureLinks.length === 0) return false;
 			if (activity.Name.toLowerCase().includes("cancelled")) return false;
-			let repeat = 0;
-			for (let i = 0; i < array.length; ++i) {
+			for (let i = 0; i < index - 1; ++i) {
 				if (activity.Name.toLowerCase() === array[i].Name.toLowerCase()) {
-					if (repeat === 1) return false;
-					else repeat += 1;
+					return false;
 				}
 			}
 			return true;
 		},
 		handleApiCall(response) {
 			console.log("api call response:", response.data)
-			this.displayedEvents = response.data.map((activity) => {
+			this.pulledEvents = response.data.map((activity) => {
 				return {
 					"Name": activity.event_title,
 					"About": activity.description,
@@ -61,7 +59,7 @@ var app = new Vue({
 		url() {
 			return `https://events.umich.edu/list/json?filter=types:${this.urlTypes()},&range=${this.urlRange()}&v=2&origin=*`
 		},
-		search(event) {
+		search() {
 			this.setDates()
 			axios({
 				method: 'get',
@@ -70,17 +68,16 @@ var app = new Vue({
 			}).then((response) => {
 				this.handleApiCall(response)
 			}).then(() => {
-				generatedDates.push.apply(generatedDates, this.displayedEvents);
+				generatedDates.push.apply(generatedDates, this.pulledEvents);
 			})
 		}
-	},
-	created: function () {
-		this.search();
 	}
 })
 
+generatedDates = data;
+app.search();
+
 $(document).ready(function () {
-	console.log("GENERATED DATES UPDATED", generatedDates);
 	//sidebar animations
 	$("#sidebar").mCustomScrollbar({
 		theme: "minimal"
@@ -106,9 +103,6 @@ $(document).ready(function () {
 	$('.season').on('click', function () {
 		$('#seasonInputValue').html($(this).html());
 	});
-
-	//pull happening data
-
 
 	//find button
 	$('#findButton').on('click', function () {
@@ -137,20 +131,12 @@ $(document).ready(function () {
 			default:
 				break;
 		}
-		// console.log(price);
-		// console.log(season);
-		// console.log(data[0]["Season"]);
-		// console.log((data[0]["Season"].toLowerCase()).includes(season));
-		generatedDates = generatedDates.concat(data)
-		console.log("season is : ",season)
-		console.log("BEFORE FILTER", generatedDates)
+
 		let filteredDates = generatedDates.filter((dateDict) => {
 			let seasonCheck = ((dateDict["Season"].toLowerCase()).includes(season) || season === "any");
 			let priceCheck = ((dateDict["Price"]) === (price) || price == "any");
-			console.log("	dateDict[Price]: ",dateDict["Price"], " price : ", price, " ", (dateDict["Price"]) === (price)  )
 			return seasonCheck && priceCheck;
 		});
-		console.log("GENERATED DATES", filteredDates)
 
 		// Set dates in sessionStorage
 		sessionStorage.setItem('dates', JSON.stringify(filteredDates));
