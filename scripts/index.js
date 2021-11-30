@@ -71,6 +71,9 @@ var app = new Vue({
 				generatedDates.push.apply(generatedDates, this.displayedEvents);
 			})
 		}
+	},
+	created: function () {
+		this.search();
 	}
 })
 
@@ -110,27 +113,36 @@ $(document).ready(function () {
 		console.log(data);
 		let price = $('#priceInputValue').html();
 		let season = $('#seasonInputValue').html();
+		if(season.includes("season")){
+			season = "any";
+		}		
+		if(price.includes("price")){
+			price = "any";
+		}
 		switch (price) {
 			case "free":
+				console.log("0")
 				price = 0;
 				break;
 			case "$":
+				console.log("1")
 				price = 1;
 				break;
 			case "$$$":
+				console.log("2")
 				price = 2;
 				break;
 			default:
 				break;
 		}
-		generatedDates = generatedDates.filter((dateDict) => {
+		let filteredDates = generatedDates.filter((dateDict) => {
 			let seasonCheck = ((dateDict["Season"].toLowerCase()).includes(season) || season === "any");
 			let priceCheck = ((dateDict["Price"]) === (price) || price == "any");
 			return seasonCheck && priceCheck;
 		});
 
 		// Set dates in sessionStorage
-		sessionStorage.setItem('dates', JSON.stringify(generatedDates));
+		sessionStorage.setItem('dates', JSON.stringify(filteredDates));
 
 		// Go to swipe page
 		window.location.href = 'swipe.html';
