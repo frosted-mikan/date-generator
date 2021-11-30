@@ -46,7 +46,7 @@ data = [
  },
  {
    "Name": "Make side walk chalk games!",
-   "About": "",
+   "About": "Who doesn't love a little nostalgic sidewalk chalk gaming? Great way to spend a sunny day outside no matter your age!",
    "PictureLinks": "https://1.bp.blogspot.com/-BQGkXPt45ec/Xt6zR8HU16I/AAAAAAABVMI/Ejl7lZkZeUw10L0Kuc6bevGtYvMgKW3-wCEwYBhgLKs4DAL1OcqzX7TVupBjefVubF0qiEdMjvrjHtT5WjaKF3h6S8rDEXwdDEGzuOa5FRvnevUlTalYGq4AE3P6GPaG6EweEf9v5iIgW9o18rqQsXTySR5nvW5hw4-jZN-kK5ZkgnuHzMdohsZ_A3utQaO3X-Eap-eCAPsPFPaCvune49oDbTT2Eyq5KBOTeDNLtvbyWfQe6dR16qgBd5Nj-8JkJTxYTP7vSgFIWUL-3JpjiE0DOc4mlV9f0IQsUUg0oLWSwRAdIVPfH22ifRg2Gm44b-LFiyJJDK_qK_qKE4z9llYGzLfVIiSVPX34Jw97KeIT-4WHm2_3pFsWHxt7hFZ0Ykfu-TKwo3jxUFftswtWEyNDY_Dh_4fryW-K9otG2bXJl__CXKdba6MuEg1AYY_meIpD5o3vvYSG_GanQ66mrH7bO1K551hG3ElWIbQp-pDLCR71FYUQ1299j1F3pLOIklPEQr6H4gcZWuXR6gPnPnz0Sw_YJ9CRQjsrzMgzGCYSWvo5vUxS-UUBT57Xpkrkzka4QGNrMrGANvbFL4wMKBEKS49jMeu2_jyork6EFZmTphnalq-aZ3msb0z-QXswEugdsjnL4F12mvtp0HNMTMOTr-vYF/s1600/draw%2Ba%2Bchalk%2Bobstacle%2Bcourse%2B%25281%2Bof%2B1%2529-3.jpg",
    "Address": "Anywhere!",
    "Price": 0,
@@ -127,7 +127,7 @@ data = [
  },
  {
    "Name": "Sharing your traumas with each other and not using them against each other... 💀 😆 ",
-   "About": "",
+   "About": " ❤️ Be good to each other ❤️ ",
    "PictureLinks": "",
    "Address": "Anywhere!",
    "Price": 0,
@@ -154,7 +154,7 @@ data = [
  },
  {
    "Name": "Grab ice cream at Blank Slate Creamery",
-   "About": "",
+   "About": "One of the most popular spots to get frozen treats with friends, Blank Slate Creamery always has unique flavors of ice cream and vegan friendly flavors.",
    "PictureLinks": "https://cloudfront-us-east-1.images.arcpublishing.com/gmg/XVIRNKV5VRAF3CES2NH34PCZEA.jpg",
    "Address": "300 W Liberty St, Ann Arbor, MI 48103",
    "Price": 2,
@@ -172,7 +172,7 @@ data = [
  },
  {
    "Name": "Ben and Jerry’s",
-   "About": "",
+   "About": "How can you not love Ben & Jerry's?  Ben & Jerry's is right downtown in Ann Arbor making it an easy spot to get to from campus.",
    "PictureLinks": "https://media-cdn.tripadvisor.com/media/photo-s/0c/55/7f/d1/the-entrance.jpg",
    "Address": "304 S State St, Ann Arbor, MI 48104",
    "Price": 1,
@@ -181,7 +181,7 @@ data = [
  },
  {
    "Name": "Coffee Cupping",
-   "About": "",
+   "About": "Coffee cupping, or coffee tasting, is the practice of observing the tastes and aromas of brewed coffee. It is a professional practice but can be done informally by anyone",
    "PictureLinks": "https://www.espresso-international.de/media/wysiwyg/coffee-101/coffee-cupping-smelling.jpg",
    "Address": "3711 Plaza Dr, Ann Arbor, MI 48108",
    "Price": 1,
@@ -190,7 +190,7 @@ data = [
  },
  {
    "Name": "Ice Skating at Ann Arbor Ice Cube",
-   "About": "",
+   "About": "The Cube boasts three superior skating surfaces, and provides year-round recreation and training for individuals of all ages and skill levels. ",
    "PictureLinks": "https://www.michigan.org/sites/default/files/uploads/2018/Ice-Skating-Campus-Martius-Park.jpg",
    "Address": "2121 Oak Valley Dr, Ann Arbor, MI 48103",
    "Price": 1,
@@ -199,7 +199,7 @@ data = [
  },
  {
    "Name": "Go Shopping for Funky Clothes at Ragstock",
-   "About": "",
+   "About": "Ragstock specializes in trendy and affordable new and used clothing for men and women. The Ann Arbor store also features a selection of vintage clothing",
    "PictureLinks": "https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,q_75,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/annarbor/ragstock_ann_arbor0-9efce2265056a36_9efce3c8-5056-a36a-065d4d4be98e528b.jpg",
    "Address": "337 E Liberty St, Ann Arbor, MI 48104",
    "Price": 1,
@@ -208,7 +208,7 @@ data = [
  },
  {
    "Name": "Kelsey Museum of Archaeology",
-   "About": "",
+   "About": "The Kelsey Museum of Archaeology supports teaching and research on Classical, Egyptian, and Near Eastern archaeology through stewardship of its rich collections, an active exhibitions program, and sponsorship of ongoing field research. ",
    "PictureLinks": "https://lh5.googleusercontent.com/p/AF1QipNQls544mD_QEYKjdT8KOKLE_MANZdQLkO4X0xE=w408-h306-k-no",
    "Address": "434 S State St, Ann Arbor, MI 48109",
    "Price": 0,
@@ -217,7 +217,7 @@ data = [
  },
  {
    "Name": "Hike in the Matthaei Botanical Gardens",
-   "About": "",
+   "About": "The University of Michigan Matthaei Botanical Gardens includes botanical gardens, natural areas with trails, and several research-quality habitats. The conservatory is popular year round. ",
    "PictureLinks": "https://cdn-assets.alltrails.com/uploads/photo/image/19905654/large_3b56f7e976831469bb05f499112af5de.jpg",
    "Address": "Ann Arbor Charter Twp, MI 48105",
    "Price": 0,
@@ -226,7 +226,7 @@ data = [
  },
  {
    "Name": "Tomukun Korean BBQ",
-   "About": "",
+   "About": "Ann Arbor's new Korean BBQ restaurant and bar, featuring table-top grills and classic Korean soul food ",
    "PictureLinks": "http://sushiyamatravels.com/wp-content/uploads/2014/07/tomukun-ann-arbor-mi-korean-bbq.jpg",
    "Address": "505 E Liberty St Suite 100, Ann Arbor, MI 48104",
    "Price": 1,
@@ -235,7 +235,7 @@ data = [
  },
  {
    "Name": "Fleetwood Diner",
-   "About": "",
+   "About": "Fleetwood serves up some of the best diner grub in Ann Arbor, 24 hours a day. Seating is extra tight in the winter when the tables outside are piled in the corner. Home of Hippie Hash, best ordered with extra veg.",
    "PictureLinks": "https://jim.rees.org/p/p01/qt01/fleet-1.jpg",
    "Address": "300 S Ashley St, Ann Arbor, MI 48104",
    "Price": 1,
@@ -244,7 +244,7 @@ data = [
  },
  {
    "Name": "Hike in the Arboretum (Arb) ",
-   "About": "",
+   "About": "This 123-acre wonderland is popular among University of Michigan students and other locals who appreciate the beauty of the great outdoors.",
    "PictureLinks": "https://mbgna.umich.edu/wp-content/uploads/2017/10/Geddes-road-overlook-Arb-Scott-Soderberg.jpg",
    "Address": "1610 Washington Heights, Ann Arbor, MI 48104",
    "Price": 0,
@@ -253,7 +253,7 @@ data = [
  },
  {
    "Name": "painting portraits of each other",
-   "About": "",
+   "About": "Painting portraits of each other can be a fun or silly thing to do with your partner. This could be something you do together or just as a surprise for your partner while they aren't looking.",
    "PictureLinks": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY4mJOh1ljMFRaUoSi3kSnMa08UskiqcmqFA&usqp=CAU",
    "Address": "Anywhere!",
    "Price": 0,
@@ -262,7 +262,7 @@ data = [
  },
  {
    "Name": "Bon Bon Bon Ann Arbor (Sweets Shop)",
-   "About": "",
+   "About": "The best kind of desserts are hand made and hand packaged in Detroit, Michigan. Just a couple of Babes Babes Babes making good chocolate for good people.",
    "PictureLinks": "https://www.mlive.com/resizer/2d_YurY3qgIER6mmEwaHLnD2JBA=/700x0/smart/cloudfront-us-east-1.images.arcpublishing.com/advancelocal/5V5AH4TP6VHO5DNU372G5PMZA4.JPG",
    "Address": "5 Nickels Arcade, Ann Arbor, MI 48104",
    "Price": 1,
@@ -271,7 +271,7 @@ data = [
  },
  {
    "Name": "Wazoo Records (Record Store)",
-   "About": "",
+   "About": "Explore new and old music at Wazoo Records and learn more about each other's music tastes and favorite artists~",
    "PictureLinks": "https://lh5.googleusercontent.com/p/AF1QipMxWaXhAq6Sbgb39RB_X8TSfgnWIZx7mRV3ADGa=w408-h408-k-no",
    "Address": "336 S State St, Ann Arbor, MI 48104",
    "Price": 1,
@@ -280,7 +280,7 @@ data = [
  },
  {
    "Name": "Pinball Pete's",
-   "About": "",
+   "About": "Ann Arbor's Pinball Pete's is a classic arcade that features a great selection of pinball machines and classic video games.",
    "PictureLinks": "https://i2.wp.com/www.michigandaily.com/wp-content/uploads/2021/04/dom.NEW_.PinballPete_sBOAA.4.1.21.001.jpg?fit=1200%2C800&ssl=1",
    "Address": "1214 S University Ave, Ann Arbor, MI 48104",
    "Price": 1,
@@ -289,7 +289,7 @@ data = [
  },
  {
    "Name": "Cleaning Up Trash",
-   "About": "",
+   "About": "Help take care of wildlife and keep your local nature areas beautiful by picking up trash with your loved one!",
    "PictureLinks": "https://media.greenmatters.com/brand-img/YwKiQ2tfV/0x0/trashtag-clean-up-litter-1552318521531.jpg",
    "Address": "Anywhere!",
    "Price": 0,

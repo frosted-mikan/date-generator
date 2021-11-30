@@ -189,7 +189,7 @@ img {
 #textContain {
     background-color: #ffb997;
     padding: 15px;
-    height: 40%;
+    height: 100%;
     width: 100%;
     overflow: auto;
 }
@@ -294,7 +294,7 @@ hr {
   .topbar {
       padding: 15px;
       --bs-gutter-x: 0;
-      height: 20%;
+      height: 40%;
       width: 100%;
       background-color: #df8483;
   }
