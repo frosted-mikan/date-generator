@@ -20,7 +20,7 @@ data = [
  {
    "Name": "Pick apples or run the corn maze at Dexter's Cider Mill",
    "About": "",
-   "PictureLinks": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dextercidermill.com%2F&psig=AOvVaw0KYhOF17IpmHvonmoXBSNf&ust=1637181629416000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCJiq_ILfnfQCFQAAAAAdAAAAABAD",
+   "PictureLinks": "https://www.dextercidermill.com/uploads/1/2/0/2/120249207/editor/dexter-cider-mill.jpg?1536068739",
    "Address": "3685 Central St, Dexter, MI 48130",
    "Price": 1,
    "Season": "Fall",
@@ -191,7 +191,7 @@ data = [
  {
    "Name": "Ice Skating at Ann Arbor Ice Cube",
    "About": "",
-   "PictureLinks": "https://lh3.googleusercontent.com/proxy/PPQc8N0tIJATYXHuR9HGt7jDhgqhmpH6py3dSHUhDVE5ECxwg4f0hYzSYXfXF8hyL-kh4tPDnxLs_uKMx1ETuh81DUOikyY",
+   "PictureLinks": "https://www.michigan.org/sites/default/files/uploads/2018/Ice-Skating-Campus-Martius-Park.jpg",
    "Address": "2121 Oak Valley Dr, Ann Arbor, MI 48103",
    "Price": 1,
    "Season": "Any, Summer, Fall, Winter, Spring",
@@ -200,7 +200,7 @@ data = [
  {
    "Name": "Go Shopping for Funky Clothes at Ragstock",
    "About": "",
-   "PictureLinks": "https://lh3.googleusercontent.com/proxy/1LMd7QGa5K3iK0EInkyBUKFza5dwnXA1cRREMGCCyb7kWWqqBx9S8o2PNqbdn50EI4DCDMuchdYxWItUoY6k272W2RPTbGdeIRwqFbYZaR57_gwWLDg1zUgoPfVl12No7L3shuQDpQI",
+   "PictureLinks": "https://assets.simpleviewinc.com/simpleview/image/fetch/c_limit,q_75,w_1200/https://assets.simpleviewinc.com/simpleview/image/upload/crm/annarbor/ragstock_ann_arbor0-9efce2265056a36_9efce3c8-5056-a36a-065d4d4be98e528b.jpg",
    "Address": "337 E Liberty St, Ann Arbor, MI 48104",
    "Price": 1,
    "Season": "Any, Summer, Fall, Winter, Spring",
@@ -227,7 +227,7 @@ data = [
  {
    "Name": "Tomukun Korean BBQ",
    "About": "",
-   "PictureLinks": "https://lh3.googleusercontent.com/proxy/PiVZFNPvYBhLmvGBoez-EV82mN5GEbMN3-qtXY4oiDwAXe7C8Hj7BX0Q2osUSN4r8qxdNF5RVwRpGzyqC8qqipoBRA6M74CdJstCi21iEk7K09qhG9diI3n41rcofs6SSEU",
+   "PictureLinks": "http://sushiyamatravels.com/wp-content/uploads/2014/07/tomukun-ann-arbor-mi-korean-bbq.jpg",
    "Address": "505 E Liberty St Suite 100, Ann Arbor, MI 48104",
    "Price": 1,
    "Season": "Any, Summer, Fall, Winter, Spring",

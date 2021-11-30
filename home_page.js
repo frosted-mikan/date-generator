@@ -9,12 +9,12 @@ var app = new Vue({
 		types: [7, 15, 11, 6, 10]
 	},
 	methods: {
-		validActivity(activity) {
+		validActivity(activity, index, array) {
 			if (activity.PictureLinks.length === 0) return false;
 			if (activity.Name.toLowerCase().includes("cancelled")) return false;
 			let repeat = 0;
-			for (let i = 0; i < this.displayedEvents.length; ++i) {
-				if (activity.Name.toLowerCase() === this.displayedEvents[i].Name.toLowerCase()) {
+			for (let i = 0; i < array.length; ++i) {
+				if (activity.Name.toLowerCase() === array[i].Name.toLowerCase()) {
 					if (repeat === 1) return false;
 					else repeat += 1;
 				}
@@ -23,11 +23,10 @@ var app = new Vue({
 		},
 		handleApiCall(response) {
 			console.log("api call response:", response.data)
-			// this.genres = [...new Set(this.originalSongs.map((song) => song["primaryGenreName"]))]
 			this.displayedEvents = response.data.map((activity) => {
 				return {
 					"Name": activity.event_title,
-					"About": activity.description.split("\r")[0],
+					"About": activity.description,
 					"PictureLinks": activity.image_url,
 					"Address": activity.location_name,
 					"Price": this.getPrice(activity.cost),
@@ -44,16 +43,19 @@ var app = new Vue({
 		},
 		setDates() {
 			this.startDate = new Date()
-			this.endDate.setDate(this.startDate.getDate() + 10)
+			this.endDate.setDate(this.startDate.getDate() + 1)
+			console.log(this.startDate)
+			console.log(this.endDate)
 		},
 		urlDate(jsDate) {
 			console.log(jsDate)
-			return `${jsDate.getFullYear()}-${jsDate.getMonth()}-${jsDate.getDate()}`
+			return `${jsDate.getFullYear()}-${jsDate.getMonth() + 1}-${jsDate.getDate()}`
 		},
 		urlTypes() {
 			return this.types.toString()
 		},
 		urlRange() {
+			console.log("THIS IS THE URLDATE:", this.urlDate(this.startDate), this.urlDate(this.endDate));
 			return `${this.urlDate(this.startDate)}to${this.urlDate(this.endDate)}`
 		},
 		url() {
@@ -132,8 +134,8 @@ $(document).ready(function () {
 		console.log((data[0]["Season"].toLowerCase()).includes(season));
 		console.log("GENERATED DATES", generatedDates)
 		generatedDates.push.apply(generatedDates, data.filter((dateDict) => {
-			let seasonCheck = (dateDict["Season"].toLowerCase()).includes(season);
-			let priceCheck = (dateDict["Price"]) === (price);
+			let seasonCheck = ((dateDict["Season"].toLowerCase()).includes(season) || season === "any");
+			let priceCheck = ((dateDict["Price"]) === (price) || price == "any");
 			return seasonCheck && priceCheck;
 		}));
 		console.log("GENERATED DATES", generatedDates)

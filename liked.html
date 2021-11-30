@@ -64,7 +64,6 @@
             <ul class="list-unstyled components">
                 <li><a href="./index.html">home</a></li>
                 <li class="active"><a href="#">liked dates</a></li>
-                <li><a href="#">add a date</a></li>
             </ul>
         </nav>
 
@@ -82,7 +81,7 @@
             <div v-for="(date, index) in likedDates" :key="date.ID" >
             <div class="row dateContainer" :id="'date' + date.ID" >
               <div class="col-md-2" id="dateImageDiv">
-                <img v-bind:src="date.PictureLinks" id="dateImage">
+                <img v-bind:src="date.PictureLinks" alt="I'm broken" id="dateImage" onerror=this.src="datesite_icon_nobkgrd.png">
               </div>
               <div class="col-md-9" id="dateText" @click="displayInfo(index)">
                 {{date.Name}}
@@ -111,14 +110,14 @@
                 </div>
                 <div class="row infoBox">
                     <div class="col-sm-5 infoRight">
-                      <img v-bind:src="likedDates[infoIndex].PictureLinks" id="infoImage">
+                      <img v-bind:src="likedDates[infoIndex].PictureLinks" alt="I'm broken" id="infoImage" onerror=this.src="datesite_icon_nobkgrd.png">
                         <div class=userRatings>
                           <p><h2>User Ratings: </h2></p>
                           <p> <span class="fa fa-star checked"></span>
                           <span class="fa fa-star checked"></span>
                           <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star unchecked"></span>
-                          <span class="fa fa-star unchecked"></span> </p>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span> </p>
                         </div>
                     </div>
                     <div class="col-sm-7 infoLeft">

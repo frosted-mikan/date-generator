@@ -1,3 +1,23 @@
+function shuffle(array) {
+    let currentIndex = array.length,  randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (currentIndex != 0) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+  
+    return array;
+}
+
+
+
 // SCRIPT FOR SWIPE.HTML PAGE
 $(document).ready(function () {
     //sidebar animations
@@ -18,7 +38,10 @@ $(document).ready(function () {
     });
 });
 
+
+
 let generatedDates = JSON.parse(sessionStorage.getItem('dates'));
+generatedDates = shuffle(generatedDates)
 console.log("dates: ", generatedDates);
 
 // Mock generatedDates[] array 
@@ -120,6 +143,7 @@ function swipeDate(heart){
     if (heart) {
         // Add date to likedDates[]
         likedDates.push(generatedDates[index]);
+        sessionStorage.setItem('dates', JSON.stringify(likedDates));
     } 
 
     // Remove from generatedDates[] so it doesn't display again
