@@ -143,9 +143,11 @@ h2 {
 }
 
 img {
-    height:100%;
-    width:100%;
-    object-fit: contain;
+    max-height:100%;
+    max-width:100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;  
 }
 
 #img, #imgBtns {
@@ -189,7 +191,7 @@ img {
 #textContain {
     background-color: #ffb997;
     padding: 15px;
-    height: 100%;
+    height: 40%;
     width: 100%;
     overflow: auto;
 }
@@ -294,7 +296,7 @@ hr {
   .topbar {
       padding: 15px;
       --bs-gutter-x: 0;
-      height: 40%;
+      height: 20%;
       width: 100%;
       background-color: #df8483;
   }

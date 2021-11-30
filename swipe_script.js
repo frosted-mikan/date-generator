@@ -141,9 +141,18 @@ modalPrice.innerHTML = "<b>price: </b>" + translatePrice(generatedDates[0]["Pric
 // Choose reject or heart a date
 function swipeDate(heart){
     if (heart) {
+        console.log("im adding stuff")
         // Add date to likedDates[]
-        likedDates.push(generatedDates[index]);
-        sessionStorage.setItem('dates', JSON.stringify(likedDates));
+        // full list
+        // trying to add
+        let oldLikedDates = []
+        if (sessionStorage.getItem('likedDates') !== null) {
+            oldLikedDates = JSON.parse(sessionStorage.getItem('likedDates'));
+        }
+        if (!(generatedDates[index] in oldLikedDates)) {
+            oldLikedDates.push(generatedDates[index]);
+            sessionStorage.setItem('likedDates', JSON.stringify(oldLikedDates));
+        }
     } 
 
     // Remove from generatedDates[] so it doesn't display again

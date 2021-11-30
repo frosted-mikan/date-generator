@@ -12,9 +12,11 @@ var app = new Vue({
 		validActivity(activity, index, array) {
 			if (activity.PictureLinks.length === 0) return false;
 			if (activity.Name.toLowerCase().includes("cancelled")) return false;
-			for (let i = 0; i < index - 1; ++i) {
+			let repeat = 0;
+			for (let i = 0; i < array.length; ++i) {
 				if (activity.Name.toLowerCase() === array[i].Name.toLowerCase()) {
-					return false;
+					if (repeat === 1) return false;
+					else repeat += 1;
 				}
 			}
 			return true;
@@ -77,9 +79,6 @@ var app = new Vue({
 	}
 })
 
-generatedDates = data;
-app.search();
-
 $(document).ready(function () {
 	console.log("GENERATED DATES UPDATED", generatedDates);
 	//sidebar animations
@@ -108,18 +107,21 @@ $(document).ready(function () {
 		$('#seasonInputValue').html($(this).html());
 	});
 
+	//pull happening data
+
+
 	//find button
 	$('#findButton').on('click', function () {
 		console.log(data);
 		let price = $('#priceInputValue').html();
 		let season = $('#seasonInputValue').html();
-		if(season === "season"){
+		if(season.includes("season")){
 			season = "any";
+		}		
+		if(price.includes("price")){
+			price = "any";
 		}
 		switch (price) {
-			case "price":
-				price = "any"
-				break;
 			case "free":
 				console.log("0")
 				price = 0;
@@ -140,12 +142,15 @@ $(document).ready(function () {
 		// console.log(data[0]["Season"]);
 		// console.log((data[0]["Season"].toLowerCase()).includes(season));
 		generatedDates = generatedDates.concat(data)
+		console.log("season is : ",season)
 		console.log("BEFORE FILTER", generatedDates)
 		let filteredDates = generatedDates.filter((dateDict) => {
 			let seasonCheck = ((dateDict["Season"].toLowerCase()).includes(season) || season === "any");
 			let priceCheck = ((dateDict["Price"]) === (price) || price == "any");
+			console.log("	dateDict[Price]: ",dateDict["Price"], " price : ", price, " ", (dateDict["Price"]) === (price)  )
 			return seasonCheck && priceCheck;
 		});
+		console.log("GENERATED DATES", filteredDates)
 
 		// Set dates in sessionStorage
 		sessionStorage.setItem('dates', JSON.stringify(filteredDates));
