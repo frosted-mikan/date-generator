@@ -1,8 +1,10 @@
+@import "https://fonts.googleapis.com/css?family=Itim:300,400,500,600,700";
+
 html, body {
   background-color: #0b032e;
   height: 100%;
   width: 100%;
-  font-family: 'Itim', cursive;
+  font-family: 'Itim';
 }
 a,
 a:hover,
