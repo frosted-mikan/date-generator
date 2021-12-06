@@ -137,7 +137,16 @@ season.innerHTML = "<b>season: </b>" + generatedDates[0]["Season"];
 modalLoc.innerHTML = "<b>location: </b>" + translateLoc(generatedDates[0]["Inside"]);
 modalPrice.innerHTML = "<b>price: </b>" + translatePrice(generatedDates[0]["Price"]);
 
-
+function validData() {
+  let oldLikedDates = JSON.parse(sessionStorage.getItem('likedDates'));
+  let addDateName = generatedDates[index]["Name"]
+  for (var key in oldLikedDates){
+    if (oldLikedDates[key]["Name"] === addDateName) {
+      return false;
+    }
+  }
+  return true;
+}
 // Choose reject or heart a date
 function swipeDate(heart){
     if (generatedDates.length === 0){
@@ -145,7 +154,7 @@ function swipeDate(heart){
       return;
     }
 
-    if (heart) {
+    if (heart && validData()) {
         console.log("im adding stuff")
         // Add date to likedDates[]
         // full list

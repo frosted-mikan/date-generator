@@ -17,8 +17,11 @@ a:focus {
 /* ---------------------------------------------------
   SIDEBAR STYLE
 ----------------------------------------------------- */
+
 #sidebarCollapse {
+  position: absolute;
   cursor: pointer;
+  z-index: 9999
 }
 
 #sidebar {
@@ -118,6 +121,10 @@ ul ul a {
 /* ---------------------------------------------------
   CONTENT STYLE
 ----------------------------------------------------- */
+#mainLiked {
+  overflow: hidden;
+  height:100vh;
+}
 
 #likedColumn {
 background-color: #FFB997;
