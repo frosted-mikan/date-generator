@@ -28,8 +28,8 @@ var app = new Vue({
 					"PictureLinks": this.getPictureLinks(activity),
 					"Address": this.getAddress(activity),
 					"Price": this.getPrice(activity),
-					"Season": "Any",
-					"Inside": false
+					"Season": this.getSeason(activity),
+					"Inside": this.getSeason(activity)
 				}
 			}).filter(this.validActivity)
 		},
@@ -58,7 +58,7 @@ var app = new Vue({
 			else return 1
 		},
 		getSeason(activity) {
-			return "Any";
+			return "any";
 		},
 		getInside(activity) {
 			return true;
