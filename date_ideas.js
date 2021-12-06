@@ -165,7 +165,7 @@ data = [
    "Name": "Jump roping",
    "About": "The basic jump, criss-cross, alternating feet jumps... Jump roping is a great outdoor activity to do with a friend or partner!",
    "PictureLinks": "https://www.mensjournal.com/wp-content/uploads/2016/10/JumpRope.jpg?quality=86&strip=all",
-   "Address": "",
+   "Address": "On the diag by the M",
    "Price": 1,
    "Season": "Spring, Summer, Fall",
    "Inside": false

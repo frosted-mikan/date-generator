@@ -23,21 +23,45 @@ var app = new Vue({
 			console.log("api call response:", response.data)
 			this.pulledEvents = response.data.map((activity) => {
 				return {
-					"Name": activity.event_title,
-					"About": activity.description,
-					"PictureLinks": activity.image_url,
-					"Address": activity.location_name,
-					"Price": this.getPrice(activity.cost),
+					"Name": this.getName(activity),
+					"About": this.getAbout(activity),
+					"PictureLinks": this.getPictureLinks(activity),
+					"Address": this.getAddress(activity),
+					"Price": this.getPrice(activity),
 					"Season": "Any",
 					"Inside": false
 				}
 			}).filter(this.validActivity)
 		},
-		getPrice(cost) {
+		getName(activity) {
+			if (!activity.event_title) return "A fun event!"
+			return activity.event_title
+		},
+		getAbout(activity) {
+			if (!activity.description) return "Try this one with friends!"
+			return activity.description
+		},
+		getPictureLinks(activity) {
+			if (!activity.image_url) return "./datesite_icon_nobkgrd.png"
+			return activity.image_url
+		},
+		getAddress(activity) {
+			if (!activity.location_name) return "virtual!"
+			return activity.location_name
+		},
+		getPrice(activity) {
+			if (!activity.cost) return 0
+			let cost = activity.cost
 			if (cost.toLowerCase().includes("free") || cost === "" || typeof cost == 'undefined') {
 				return 0
 			}
 			else return 1
+		},
+		getSeason(activity) {
+			return "Any";
+		},
+		getInside(activity) {
+			return true;
 		},
 		setDates() {
 			this.startDate = new Date()
