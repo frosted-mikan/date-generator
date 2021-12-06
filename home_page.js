@@ -46,7 +46,7 @@ var app = new Vue({
 			return activity.image_url
 		},
 		getAddress(activity) {
-			if (!activity.location_name) return "virtual!"
+			if (!activity.location_name) return "Virtual"
 			return activity.location_name
 		},
 		getPrice(activity) {
