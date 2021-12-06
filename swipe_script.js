@@ -140,6 +140,11 @@ modalPrice.innerHTML = "<b>price: </b>" + translatePrice(generatedDates[0]["Pric
 
 // Choose reject or heart a date
 function swipeDate(heart){
+    if (generatedDates.length === 0){
+      console.log(generatedDates.length, generatedDates.length === 0)
+      return;
+    }
+
     if (heart) {
         console.log("im adding stuff")
         // Add date to likedDates[]
