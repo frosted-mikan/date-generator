@@ -87,8 +87,8 @@
         </div>
 
         <div v-else>
-          <div v-for="(date, index) in likedDates" :key="date.ID">
-            <div class="row dateContainer" :id="'date' + date.ID">
+          <div v-for="(date, index) in likedDates" :key="index">
+            <div class="row dateContainer" :id="'date' + index">
               <div class="col-md-2" id="dateImageDiv">
                 <img v-bind:src="date.PictureLinks" alt="I'm broken" id="dateImage"
                   onerror=this.src="datesite_icon_nobkgrd.png">
