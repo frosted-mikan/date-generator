@@ -2,6 +2,7 @@ Vue.config.devtools = true
 
 let likedDatesJson = []
 if (sessionStorage.getItem('likedDates') !== null) {
+  console.log(sessionStorage.getItem('likedDates'))
   likedDatesJson = JSON.parse(sessionStorage.getItem('likedDates'));
 }
 
@@ -21,6 +22,7 @@ var resultView = new Vue({
     },
     deleteDate: function (index) {
       this.likedDates.splice(index, 1);
+      sessionStorage.setItem('likedDates', JSON.stringify(this.likedDates))
       console.log(this.likedDates);
     }
   },
