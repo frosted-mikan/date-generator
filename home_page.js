@@ -58,7 +58,7 @@ var app = new Vue({
 			else return 1
 		},
 		getSeason(activity) {
-			return "any";
+			return "Any, Spring, Summer, Fall, Winter";
 		},
 		getInside(activity) {
 			return true;
