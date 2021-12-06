@@ -58,7 +58,7 @@ var app = new Vue({
 			else return 1
 		},
 		getSeason(activity) {
-			return "Any, Spring, Summer, Fall, Winter";
+			return "any";
 		},
 		getInside(activity) {
 			return true;
@@ -157,7 +157,13 @@ $(document).ready(function () {
 		}
 
 		let filteredDates = generatedDates.filter((dateDict) => {
-			let seasonCheck = ((dateDict["Season"].toLowerCase()).includes(season) || season === "any");
+            /* Season logic: include date if... 
+               - date season includes the selected season, 
+               - selected season is "any", 
+               - OR date season is "any" */ 
+			let seasonCheck = ((dateDict["Season"].toLowerCase()).includes(season) 
+                                || season === "any" 
+                                || dateDict["Season"].toLowerCase() === "any");
 			let priceCheck = ((dateDict["Price"]) === (price) || price == "any");
 			return seasonCheck && priceCheck;
 		});
