@@ -2,7 +2,7 @@ Vue.config.devtools = true
 
 let likedDatesJson = []
 if (sessionStorage.getItem('likedDates') !== null) {
-  console.log(sessionStorage.getItem('likedDates'))
+  // console.log(sessionStorage.getItem('likedDates'))
   likedDatesJson = JSON.parse(sessionStorage.getItem('likedDates'));
 }
 
@@ -16,23 +16,23 @@ var resultView = new Vue({
   },
   methods: {
     displayInfo: function (index) {
-      console.log("CLICKED LIKED");
+      // console.log("CLICKED LIKED");
       this.infoStatus = !this.infoStatus;
       this.infoIndex = index;
     },
     deleteDate: function (index) {
       this.likedDates.splice(index, 1);
       sessionStorage.setItem('likedDates', JSON.stringify(this.likedDates))
-      console.log(this.likedDates);
+      // console.log(this.likedDates);
     }
   },
   computed: {
     computedInfo: function () {
       if (this.infoStatus) {
-        console.log("RETURNED Flex");
+        // console.log("RETURNED Flex");
         return "flex";
       } else {
-        console.log("RETURNED None");
+        // console.log("RETURNED None");
         return "none";
       }
     },
@@ -52,10 +52,10 @@ var resultView = new Vue({
     },
     isEmpty: function () {
       if (!this.likedDates.length) {
-        console.log("ISEMPTY RETURNS True");
+        // console.log("ISEMPTY RETURNS True");
         return true;
       } else {
-        console.log("ISEMPTY RETURNS False");
+        // console.log("ISEMPTY RETURNS False");
         return false;
       }
     }

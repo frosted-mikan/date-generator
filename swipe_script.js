@@ -42,7 +42,7 @@ $(document).ready(function () {
 
 let generatedDates = JSON.parse(sessionStorage.getItem('dates'));
 generatedDates = shuffle(generatedDates)
-console.log("dates: ", generatedDates);
+// console.log("dates: ", generatedDates);
 
 // Mock generatedDates[] array 
 // let generatedDates = [
@@ -150,12 +150,12 @@ function validData() {
 // Choose reject or heart a date
 function swipeDate(heart){
     if (generatedDates.length === 0){
-      console.log(generatedDates.length, generatedDates.length === 0)
+      // console.log(generatedDates.length, generatedDates.length === 0)
       return;
     }
 
     if (heart && validData()) {
-        console.log("im adding stuff")
+        // console.log("im adding stuff")
         // Add date to likedDates[]
         // full list
         // trying to add

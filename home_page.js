@@ -20,7 +20,7 @@ var app = new Vue({
 			return true;
 		},
 		handleApiCall(response) {
-			console.log("api call response:", response.data)
+			// console.log("api call response:", response.data)
 			this.pulledEvents = response.data.map((activity) => {
 				return {
 					"Name": this.getName(activity),
@@ -66,18 +66,18 @@ var app = new Vue({
 		setDates() {
 			this.startDate = new Date()
 			this.endDate.setDate(this.startDate.getDate() + 1)
-			console.log(this.startDate)
-			console.log(this.endDate)
+			// console.log(this.startDate)
+			// console.log(this.endDate)
 		},
 		urlDate(jsDate) {
-			console.log(jsDate)
+			// console.log(jsDate)
 			return `${jsDate.getFullYear()}-${jsDate.getMonth() + 1}-${jsDate.getDate()}`
 		},
 		urlTypes() {
 			return this.types.toString()
 		},
 		urlRange() {
-			console.log("THIS IS THE URLDATE:", this.urlDate(this.startDate), this.urlDate(this.endDate));
+			// console.log("THIS IS THE URLDATE:", this.urlDate(this.startDate), this.urlDate(this.endDate));
 			return `${this.urlDate(this.startDate)}to${this.urlDate(this.endDate)}`
 		},
 		url() {
@@ -130,7 +130,7 @@ $(document).ready(function () {
 
 	//find button
 	$('#findButton').on('click', function () {
-		console.log(data);
+		// console.log(data);
 		let price = $('#priceInputValue').html();
 		let season = $('#seasonInputValue').html();
 		if(season.includes("season")){
@@ -141,15 +141,15 @@ $(document).ready(function () {
 		}
 		switch (price) {
 			case "free":
-				console.log("0")
+				// console.log("0")
 				price = 0;
 				break;
 			case "$":
-				console.log("1")
+				// console.log("1")
 				price = 1;
 				break;
 			case "$$$":
-				console.log("2")
+				// console.log("2")
 				price = 2;
 				break;
 			default:
