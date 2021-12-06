@@ -161,6 +161,7 @@ function swipeDate(heart){
     // Check if there are any more dates
     if (generatedDates.length === 0){
         // if not, display "no more dates"
+        img.src = "datesite_icon_nobkgrd.png"
         dateName.innerHTML = "No more dates :(";
         price.innerHTML = "";
         loc.innerHTML = "";    
@@ -168,10 +169,10 @@ function swipeDate(heart){
     } 
     
     // Update index (circle through)
-    if (index === generatedDates.length-1){
-        index = 0;
-    } else {
+    if (index < generatedDates.length-1){
         index += 1;
+    } else {
+        index = 0;
     }
 
     // Update date card
