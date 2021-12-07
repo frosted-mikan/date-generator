@@ -114,7 +114,7 @@ data = [
    "Address": "901 W Lafayette Blvd, Detroit, MI 48226",
    "Price": 1,
    "Season": "Any, Summer, Fall, Winter, Spring",
-   "Inside": false
+   "Inside": true
  },
  {
    "Name": "Wayne County Lightfest: Christmas light drive through",
@@ -123,7 +123,7 @@ data = [
    "Address": "7651 N Merriman Rd, Westland, MI 48185",
    "Price": 1,
    "Season": "Winter",
-   "Inside": true
+   "Inside": false
  },
  {
    "Name": "Sharing your traumas with each other and not using them against each other... 💀 😆 ",
