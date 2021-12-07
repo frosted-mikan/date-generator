@@ -94,7 +94,9 @@ let span = document.getElementsByClassName("close")[0];
 
 // Open and close popup
 btn.onclick = function() {
-  modal.style.display = "block";
+  if (generatedDates.length > 0){ // No popup when there are no dates
+    modal.style.display = "block";
+  }
 }
 span.onclick = function() {
   modal.style.display = "none";
